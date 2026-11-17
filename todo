@@ -1,0 +1,90 @@
+CPP
+1. Variant
+    2. unique pointers, shared pointers
+3. type erasure
+4. small string optimisation
+    5. hash tables, open addressing hash tables
+    6. LRU cache
+    7. vector, string
+8. compile time typelist
+
+
+
+Multithreading
+1. thread safe singleton
+    2. thread pool, memory pool
+    3. spinlocks, reader writer locks
+4. seqlocks
+5 ring buffer, MPMC bounded queue, Lock free SPSC queue
+6. order throttler
+
+HFT
+1. order book
+
+
+
+DONE
+5. Implement std::vector Internals
+Design a simplified Vector<T> class that manages dynamic memory, supports push_back, reserve, resize, copy/move semantics, and strong exception safety guarantees.
+
+2. Build a Thread-Safe Bounded Queue
+Implement a bounded blocking queue using condition variables and mutexes. The queue should support multiple producers and consumers. Ensure there are no deadlocks, missed wakeups, or spurious wakeup bugs.
+
+14. Implement a Spin Lock and Compare with Mutex
+Design a spin lock using atomic_flag. Benchmark and explain when spin locks outperform mutexes and when they degrade performance.
+
+
+
+
+1. Implement a Fixed-Size Memory Pool Allocator
+Design and implement a fixed-size memory pool that pre-allocates a large chunk of memory and serves fixed-size object allocations in O(1) time. The allocator must avoid fragmentation and support deallocation. Discuss cache locality and alignment concerns.
+
+4. Design a Thread Pool from Scratch
+Implement a thread pool that supports task submission, graceful shutdown, and work stealing. Ensure exception safety and proper resource cleanup.
+
+
+
+
+7. Build a Custom Hash Map
+Implement a hash map using open addressing or separate chaining. Handle collisions, resizing, rehashing, and iterator validity.
+
+11. Build a LRU Cache
+Design a thread-safe LRU cache with O(1) get and put operations using a combination of hash map and doubly linked list. Ensure correctness under concurrent access.
+
+
+
+
+
+
+
+3. Implement a Lock-Free Stack
+Design a lock-free stack using atomic operations and compare-and-swap (CAS). Explain the ABA problem and implement a mitigation strategy (e.g., version tagging).
+
+10. Implement a Lock-Free Ring Buffer
+Design a single-producer, single-consumer ring buffer optimized for low latency. Use atomic operations and memory barriers correctly.
+
+
+
+
+
+
+6. Implement a Custom std::function
+Build a type-erased callable wrapper that can store lambdas, function pointers, and functors. Implement small buffer optimization to avoid heap allocation for small callables.
+
+
+8. Implement Double-Checked Locking Singleton
+Design a singleton using double-checked locking and explain why memory ordering matters. Provide a correct implementation using C++11 atomics.
+
+9. Implement RAII Wrapper for File Descriptor
+Design a class that safely manages POSIX file descriptors. Implement move semantics, prevent copying, and ensure exception-safe cleanup.
+
+
+
+12. Implement Copy-on-Write String
+Design a string class that shares memory between copies and performs deep copy only on mutation. Ensure thread-safety considerations are clearly discussed.
+
+13. Design a Smart Logger
+Create a high-performance asynchronous logger using a lock-free queue and a dedicated logging thread. Ensure minimal latency impact on producer threads.
+
+
+For detailed discussion around such advanced topics, don't forget to visit link given the first comment.
